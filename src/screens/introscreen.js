@@ -15,13 +15,18 @@ import {
 
 
 export default class introscreen extends Component<Props> {
+  goTask(){
+    this.props.navigation.navigate('Task');
+  }
   render() {
     return (
       <View style={styles.container}>
         <Image
           style={styles.logo}
           source={require('./../images/remindMe-logo.png')} />
-        <TouchableHighlight style={styles.secondaryButton}>
+        <TouchableHighlight
+            style={styles.secondaryButton}
+            onPress={this.goTask().bind(this)}>
           <Text style={styles.buttonText}>COMENZAR</Text>
         </TouchableHighlight>
         <Image

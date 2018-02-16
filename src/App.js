@@ -10,18 +10,16 @@ import {
 
 //Screens
 import IntroScreen from './screens/introscreen';
-import StackNavigator from 'react-navigation';
+import TaskScreen from './screens/taskscreens';
+import { StackNavigator } from 'react-navigation';
 
-const ScreenStack =StackNavigator({
-  Intro:{
-    screen:IntroScreen
-  },
+const ScreenStack = StackNavigator(
   {
-    initialRouteName: 'Intro',
-  }
+  Home:{screen:IntroScreen},
+  Task:{screen:TaskScreen}
 });
 
-export default class App extends{
+export default class App extends Component{
   render(){
     return <ScreenStack/>;
   }
